@@ -1,0 +1,63 @@
+:root{
+  --bg:#fff0f6;
+  --card:#ffffff;
+  --accent:#e83e8c;
+  --muted:#6b6b6b;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;color:#222}
+body{background:linear-gradient(180deg,#fff0f6 0%, #ffeef8 60%);display:flex;flex-direction:column}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 20px}
+.logo{font-weight:700;text-decoration:none;color:var(--accent);font-size:1.05rem}
+.nav-links a{margin-left:14px;text-decoration:none;color:var(--muted)}
+
+.hero{flex:1;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;z-index:10}
+.card{width:100%;max-width:720px;background:var(--card);border-radius:18px;padding:36px;text-align:center;box-shadow:0 12px 30px rgba(232,62,140,0.12);min-height:520px;display:flex;flex-direction:column;justify-content:center}
+.tall-card{min-height:680px}
+h1{margin:0 0 8px;font-size:clamp(1.6rem,3vw,2.6rem);color:var(--accent)}
+.subtitle{color:var(--muted);margin:0 0 22px}
+
+.buttons{display:flex;gap:16px;justify-content:center;position:relative}
+.btn{padding:12px 20px;border-radius:999px;border:0;font-weight:700;cursor:pointer;min-width:110px}
+.btn:focus{outline:3px solid rgba(232,62,140,0.18)}
+.no{background:#f7c6d9;color:#7a1b39;position:relative}
+.yes{background:var(--accent);color:white}
+
+.overlay{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.25);z-index:40}
+.overlay.hidden{display:none}
+.modal{background:white;padding:28px;border-radius:14px;max-width:520px;text-align:center;box-shadow:0 10px 40px rgba(0,0,0,0.12);position:relative;overflow:hidden}
+#confetti{position:absolute;inset:0;pointer-events:none}
+
+/* confetti pieces */
+.confetti{position:absolute;width:10px;height:14px;opacity:0.95;border-radius:2px;animation:fall 1700ms linear forwards}
+@keyframes fall{to{transform:translateY(120vh) rotate(520deg);opacity:0}}
+
+/* hearts background */
+.hearts-background{position:fixed;inset:0;z-index:1;pointer-events:auto}
+.heart{position:absolute;font-size:32px;cursor:pointer;animation:float 5s ease-in-out infinite;user-select:none;transition:transform 200ms;z-index:2;pointer-events:auto;padding:8px}
+.heart:hover{transform:scale(1.25)}
+.heart.glow{filter:drop-shadow(0 0 12px rgba(232,62,140,0.8));animation:float 5s ease-in-out infinite,glow-pulse 1.2s ease-in-out infinite}
+
+@keyframes float{0%,100%{transform:translateY(0) translateX(0)rotate(0deg)}25%{transform:translateY(-20px) translateX(10px)rotate(5deg)}50%{transform:translateY(-40px) translateX(-10px)rotate(-5deg)}75%{transform:translateY(-20px) translateX(5px)rotate(3deg)}}
+@keyframes glow-pulse{0%,100%{filter:drop-shadow(0 0 8px rgba(232,62,140,0.6))}50%{filter:drop-shadow(0 0 16px rgba(232,62,140,1))}}
+@keyframes heartbeat{0%,100%{transform:scale(1)}25%{transform:scale(1.08)}50%{transform:scale(1.15)}}
+
+/* teddy bears */
+.bears{position:fixed;font-size:64px;opacity:0.3;pointer-events:none;z-index:0;animation:sway 4s ease-in-out infinite}
+#bearsLeft{left:10px;top:15%}
+#bearsRight{right:10px;bottom:20%}
+@keyframes sway{0%,100%{transform:translateX(0)rotate(-3deg)}50%{transform:translateX(8px)rotate(3deg)}}
+
+/* japanese quote section */
+.jp-quote-section{text-align:center;margin-top:18px;padding:14px;background:rgba(232,62,140,0.06);border-radius:10px}
+.jp-quote-text{color:var(--accent);font-style:italic;font-size:1.1rem;margin:0;line-height:1.6;font-weight:500}
+.jp-meaning{color:var(--muted);margin:12px 0 0;font-size:0.95rem;line-height:1.5}
+.hidden{display:none!important}
+
+/* small screens */
+@media (max-width:520px){
+  .card{padding:22px;border-radius:12px}
+  .btn{min-width:84px;padding:10px 14px}
+  .nav{padding:10px}
+}
+

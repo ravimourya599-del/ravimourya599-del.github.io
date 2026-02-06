@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Will You Be My Valentine?</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav">
+    <a href="index.html" class="logo">🌹 Rose Day</a>
+    <div class="nav-links">
+      <a href="memories.html">Memories</a>
+      <a href="contact.html">Notes</a>
+    </div>
+  </nav>
+
+  <div id="heartsContainer" class="hearts-background"></div>
+  <div class="bears" id="bearsLeft">🧸</div>
+  <div class="bears" id="bearsRight">🧸</div>
+
+  <main class="hero">
+    <div class="card tall-card">
+      <h1>Will you be my Valentine?</h1>
+      <p class="subtitle">Pick one — but try to be nice 💖</p>
+
+      <div class="buttons" id="buttonArea">
+        <button id="noBtn" class="btn no">No</button>
+        <button id="yesBtn" class="btn yes">Yes</button>
+      </div>
+      
+      <div id="jpQuoteContainer" class="jp-quote-section hidden">
+        <p id="jpQuote" class="jp-quote-text"></p>
+        <button id="replyBtn" class="btn yes" style="margin-top:12px">Reply 💭</button>
+        <p id="jpMeaning" class="jp-meaning hidden"></p>
+      </div>
+    </div>
+  </main>
+
+  <div id="messageOverlay" class="overlay hidden" aria-hidden="true">
+    <div class="modal">
+      <div id="confetti"></div>
+      <h2 id="msgTitle">Yay! 💖</h2>
+      <p id="msgText"></p>
+      <button id="closeBtn" class="btn yes">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
